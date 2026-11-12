@@ -1,0 +1,39 @@
+# DonutSellAxe Configuration
+settings:
+  # Duration in seconds before the Sell Axe self-destructs (7 days = 604800 seconds)
+  duration-seconds: 604800
+
+  # Interval in ticks (20 ticks = 1 second) to update live countdown lore and remove expired axes
+  update-interval-ticks: 20
+
+  # Whether breaking a Shulker Box placed inside a Chest/Barrel also sells the items inside that Shulker Box
+  sell-shulkers-inside-chests: true
+
+  # If sell-shulkers-inside-chests is true:
+  # false = keep the empty Shulker Box inside the chest after selling its contents
+  # true  = also sell the Shulker Box item itself ($220.0)
+  sell-empty-shulker-box-item: false
+
+axe-item:
+  material: NETHERITE_AXE
+  name: "&#00f986&lSELL AXE"
+  custom-model-data: 1
+  unbreakable: true
+  glow: true
+  lore:
+    - "&7Break any chest, barrel, or shulker box"
+    - "&7to instantly sell its contents!"
+    - ""
+    - "&fSelf-Destructs in: &#00f986%time_left%"
+    - "&8(Container automatically comes back)"
+
+messages:
+  prefix: "&#00f986&lSELL AXE &8» "
+  sold-chat: "&fSold &a%amount%x &fitems for &#00f986$%total%&f!"
+  sold-actionbar: "&#00f986+$%total% &7(%amount% items sold)"
+  nothing-to-sell: "&cThat container has no sellable items!"
+  axe-expired: "&cYour Sell Axe has expired after 7 days and shattered!"
+  axe-given: "&aGave a 7-day Sell Axe to &f%player%&a."
+  axe-received: "&aYou received a 7-day Sell Axe!"
+  reloaded: "&aConfiguration and 1,052 item prices reloaded!"
+  no-permission: "&cYou do not have permission to do that."
